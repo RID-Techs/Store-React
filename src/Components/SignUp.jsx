@@ -36,7 +36,7 @@ export function SignUp() {
       const Signing_Up = async () => {
         
         try {
-          const SendData = await fetch(`http://localhost:9009/auth/signup`, {
+          const SendData = await fetch(`https://back-store-mkge.onrender.com/auth/signup`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -132,8 +132,7 @@ export function SignUp() {
         <div className="bottom-info">
           <footer>
             <h6>
-              2024 | All rights reserved. Made by RID Tech with{" "}
-              <span style={{ color: "red" }}>&hearts;</span>
+              2024 | All rights reserved. Made by RID Tech with <span style={{ color: "red" }}>&hearts;</span>
             </h6>
           </footer>
         </div>
