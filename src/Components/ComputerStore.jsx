@@ -1,4 +1,5 @@
 import "./ComputerStore.css";
+import price from "/Img/Price.png"
 import Lenovo from "/Items_Images/Lenovo_i5.png";
 import ROG_Gaming from "/Items_Images/ROG_Gaming.png";
 import Megaport_Gamer from "/Items_Images/Megaport_Gamer.png";
@@ -56,7 +57,7 @@ export function ComputerStore() {
             </div>
             <div className="delivery">
               <h1 id="buy">Buy Now</h1>
-              <img height={100} src="../Img/Price.png" alt="Price" />
+              <img height={100} src={price} alt="Price" />
             </div>
             <header>
               <h1>

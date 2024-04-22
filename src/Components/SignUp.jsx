@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import logo from "/Img/Laptop.jpg";
+import price from "/Img/Price.png"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
 
@@ -82,7 +83,7 @@ export function SignUp() {
             </div>
             <div className="delivery">
               <h1 id="buy">Buy Now</h1>
-              <img height={100} src="../Img/Price.png" alt="Price" />
+              <img height={100} src={price} alt="Price" />
             </div>
             <header>
               <h1>
