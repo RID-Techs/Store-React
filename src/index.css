@@ -1,0 +1,145 @@
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: rgba(240, 248, 255, 0.144);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+#buy {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+.delivery {
+  display: flex;
+  gap: 1em;
+}
+#store {
+  text-decoration: underline wavy black;
+  line-height: 1.4em;
+  text-underline-offset: 6px;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0.733);
+  color: #a0247b;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0px 0px 9px rgb(209, 99, 253);
+}
+
+.wraper {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+}
+.show{
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f6f66c;
+  border-radius: 20px;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  padding: 1em;
+}
+.hold{
+  display: inline-flex;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+label {
+  font-size: 1rem;
+}
+#Gaming {
+  height: 300px;
+  border-radius: 20px;
+}
+#Username,
+#Password {
+  outline: none;
+  font-size: 1rem;
+  padding: 1em;
+  border: 1px solid silver;
+  border-radius: 10px;
+}
+#Username:hover,
+#Password:hover {
+  border: 1px dashed purple;
+  background-color: transparent;
+}
+
+#log-out {
+  font-size: 1.1rem;
+  padding: 0.5em;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0.733);
+  color: #a0247b;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0px 0px 9px rgb(209, 99, 253);
+  transition: all 0.3s ease-in-out;
+}
+#log-out:hover {
+  background-color: rgb(209, 99, 253);
+  color: #fff;
+  box-shadow: 0px 0px 9px rgb(250, 249, 250);
+}
+
+.account p{
+  text-align: center;
+}
+#welcome{
+  font-size: 1.2rem;
+  font-family: monospace;
+  font-style: italic;
+  padding: 0em 1em;
+}
+
+.error-page-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.bottom-info {
+  padding: 1em;
+  background-color: #f7f6f66c;
+  border-radius: 20px;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  margin-top: 2em;
+}
+footer h6 {
+  font-family: monospace;
+  text-align: center;
+}
+
+@media only screen and (max-width: 896px) {
+  .Header {
+    gap: 2em;
+  }
+}
+
+@media only screen and (max-width: 486px) {
+  .Header {
+    flex-direction: column;
+  }
+  .hold{
+    flex-direction: column;
+  }
+  #store {
+    margin-bottom: 1em;
+  }
+}

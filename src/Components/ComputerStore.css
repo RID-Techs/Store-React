@@ -1,0 +1,26 @@
+#dream-computer h4{
+    margin-top: 1em;
+    background-color: rgba(240, 248, 255, 0.144);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+#dream-computer h4{
+    text-align: center;
+}
+.card{
+    background-color: transparent;
+    border: none;
+}
+.items{
+    background-color: rgba(240, 248, 255, 0.144);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    padding: 1em;
+}
+#purchase{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(245, 63, 93);
+    padding: 0.5em;
+    border-radius: 10px;
+}
