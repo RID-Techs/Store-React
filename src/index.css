@@ -54,6 +54,10 @@ form {
 label {
   font-size: 1rem;
 }
+.Google-button{
+  display: flex;
+  justify-content: center;
+}
 #Gaming {
   height: 300px;
   border-radius: 20px;

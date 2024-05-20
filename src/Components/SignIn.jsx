@@ -1,6 +1,7 @@
 import logo from "/Img/Laptop.jpg";
 import price from "/Img/Price.png"
 import {Link} from "react-router-dom"
+import GoogleButton from "react-google-button"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
 
@@ -75,6 +76,20 @@ export function SignIn() {
     }
   };
 
+  
+    
+    const handleGoogleLogin = async () => {
+      try {
+        const response = await fetch('http://localhost:9009/auth/google');
+        const { url } = await response.json();
+        window.location.href = url;
+      } catch (error) {
+        console.error('Error logging in with Google:', error);
+      }
+    };
+    
+  
+
   return (
     <>
       <div
@@ -130,6 +145,14 @@ export function SignIn() {
                 <button onClick={handlesubmit} type="button" id="log-out">
                   Login
                 </button>
+          <hr />
+          <div className="Google-button">
+            <GoogleButton 
+              label="Sign in with Google"
+              type="light"
+              onClick={handleGoogleLogin}
+            />
+          </div>
               </form>
             </div>
           </div>
