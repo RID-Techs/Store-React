@@ -165,8 +165,8 @@ export function SignIn() {
         <div className="bottom-info">
           <footer>
             <h6>
-              2024 | All rights reserved. Made by RID Tech with{" "}
-              <span style={{ color: "red" }}>&hearts;</span>
+              2024 | All rights reserved | <a href="/privacy">Privacy</a>. Made by RID Tech with 
+              <span style={{ color: "red" }}> &hearts;</span>
             </h6>
           </footer>
         </div>

@@ -8,6 +8,7 @@ import { ComputerStore } from "./Components/ComputerStore";
 import './index.css'
 import { ToastContainer, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Privacy } from "./Components/Privacy";
 
 function App() {
 
@@ -35,6 +36,15 @@ function App() {
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <ComputerStore />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage />
+    },
+    {
+      path: "/privacy",
+      element: (
+        <ErrorBoundary fallback={<Error/>}>
+          <Privacy />
         </ErrorBoundary>
       ),
       errorElement: <ErrorPage />
