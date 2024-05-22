@@ -80,7 +80,7 @@ export function SignIn() {
     
     const handleGoogleLogin = async () => {
       try {
-        const response = await fetch('http://localhost:9009/auth/google');
+        const response = await fetch('https://back-store-mkge.onrender.com/auth/google');
         const { url } = await response.json();
         window.location.href = url;
       } catch (error) {

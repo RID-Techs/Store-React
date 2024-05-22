@@ -16,17 +16,12 @@ import { toast } from "react-toastify";
 
 export function ComputerStore() {
 
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token')
-    //     console.log(token)
-    // }, [])
-
     const navigate = useNavigate()
 
     useEffect(() => {
       const checkCookie = async () => {
         try {
-          const IsAuthenticated = await fetch("http://localhost:9009/auth/welcome", {
+          const IsAuthenticated = await fetch("https://back-store-mkge.onrender.com/auth/welcome", {
             method: "GET",
             credentials: "include"
           })
@@ -50,7 +45,7 @@ export function ComputerStore() {
 
       const refreshAccessToken = async () => {
         try {
-            const response = await fetch('http://localhost:9009/auth/refreshtoken', {
+            const response = await fetch('https://back-store-mkge.onrender.com/auth/refreshtoken', {
                 method: 'POST',
                 credentials: 'include'
             });
@@ -82,7 +77,7 @@ export function ComputerStore() {
         Logged_Out()
         const loggingOut = async () => {
         try {
-          const logNow = await fetch("http://localhost:9009/auth/logout", {
+          const logNow = await fetch("https://back-store-mkge.onrender.com/auth/logout", {
             method: "POST",
             credentials: "include"
           })

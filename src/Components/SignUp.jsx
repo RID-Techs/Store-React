@@ -1,11 +1,10 @@
-// import { useState } from "react";
 import logo from "/Img/Laptop.jpg";
 import price from "/Img/Price.png"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
 
 export function SignUp() {
-  // const [isLoaded, setIsLoaded] = useState(false)
+  
   const navigate = useNavigate()
 
   const EmptyInput = () => {
