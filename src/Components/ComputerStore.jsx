@@ -16,11 +16,59 @@ import { toast } from "react-toastify";
 
 export function ComputerStore() {
 
-    useEffect(() => {
-        const token = localStorage.getItem('token')
-        console.log(token)
-    }, [])
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token')
+    //     console.log(token)
+    // }, [])
+
     const navigate = useNavigate()
+
+    useEffect(() => {
+      const checkCookie = async () => {
+        try {
+          const IsAuthenticated = await fetch("http://localhost:9009/auth/welcome", {
+            method: "GET",
+            credentials: "include"
+          })
+
+          if(IsAuthenticated.status === 401){
+            await refreshAccessToken()
+            return checkCookie()
+          }
+
+          const getAnswer = await IsAuthenticated.json()
+          
+          if(IsAuthenticated.ok){
+            console.log("Nice")
+            console.log(getAnswer)
+          }
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      checkCookie()
+
+      const refreshAccessToken = async () => {
+        try {
+            const response = await fetch('http://localhost:9009/auth/refreshtoken', {
+                method: 'POST',
+                credentials: 'include'
+            });
+            const getAnswer = response.json()
+            console.log(getAnswer)
+
+            if(response.status === 403){
+              navigate("/")
+            }
+    
+          
+        } catch (error) {
+            console.error('Error refreshing access token:', error);
+        }
+    };
+
+  }, [navigate])
+
 
     const Logged_Out = () => {
         toast.warn("You have just logged out !", {
@@ -30,11 +78,28 @@ export function ComputerStore() {
       };
 
     const Log_Out = () => {
-        localStorage.removeItem('token')
+
         Logged_Out()
-        setTimeout(()=> {
-            navigate("/")
-        }, 2000)
+        const loggingOut = async () => {
+        try {
+          const logNow = await fetch("http://localhost:9009/auth/logout", {
+            method: "POST",
+            credentials: "include"
+          })
+          const res = logNow.json()
+          console.log(res)
+
+          if(logNow.ok){
+            setTimeout(()=> {
+              navigate("/")
+          }, 1000)
+          }
+
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      loggingOut()
     }
 
   return (
