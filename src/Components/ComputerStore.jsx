@@ -41,7 +41,6 @@ export function ComputerStore() {
           console.log(error)
         }
       }
-      checkCookie()
 
       const refreshAccessToken = async () => {
         try {
@@ -62,7 +61,9 @@ export function ComputerStore() {
         }
     };
 
-  })
+    checkCookie()
+
+  }, [navigate])
 
 
     const Logged_Out = () => {
