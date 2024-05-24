@@ -1,5 +1,0 @@
-# Redirect HTTP to HTTPS
-/*    https://computers-store.netlify.app/:splat   301!
-
-# SPA redirect rule
-/*    /index.html   200
