@@ -34,54 +34,6 @@ function App() {
     },
     {
       path: "/store",
-      loader: async () => {
-
-        const checkCookie = async () => {
-          try {
-            const IsAuthenticated = await fetch("https://back-store-mkge.onrender.com/auth/welcome", {
-              method: "GET",
-              credentials: "include"
-            })
-  
-            if(IsAuthenticated.status === 401){
-              await refreshAccessToken()
-              return checkCookie()
-            }
-  
-            const getAnswer = await IsAuthenticated.json()
-            
-            if(IsAuthenticated.ok){
-              console.log("Nice")
-              console.log(getAnswer)
-            }
-          } catch (error) {
-            console.log(error)
-          }
-        }
-  
-        const refreshAccessToken = async () => {
-          try {
-              const response = await fetch('https://back-store-mkge.onrender.com/auth/refreshtoken', {
-                  method: 'POST',
-                  credentials: 'include'
-              });
-              const getAnswer = response.json()
-              console.log(getAnswer)
-  
-              if(response.status === 403){
-                navigate("/")
-              }
-      
-            
-          } catch (error) {
-              console.error('Error refreshing access token:', error);
-          }
-      };
-  
-      checkCookie()
-  
-
-      },
       element: (
         <ErrorBoundary fallback={<Error/>}>
           <ComputerStore />
