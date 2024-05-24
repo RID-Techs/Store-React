@@ -146,15 +146,15 @@ export function SignIn() {
                   Login
                 </button>
           <hr />
+              </form>
+            </div>
+          </div>
           <div className="Google-button">
             <GoogleButton 
               label="Sign in with Google"
               type="light"
               onClick={handleGoogleLogin}
             />
-          </div>
-              </form>
-            </div>
           </div>
           <div className="account mt-2">
             <p>Don&lsquo;t you have an account yet ? <Link to={"/signup"}>Sign Up</Link> </p>
