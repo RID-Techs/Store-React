@@ -62,7 +62,7 @@ export function ComputerStore() {
         }
     };
 
-  }, [navigate])
+  })
 
 
     const Logged_Out = () => {
