@@ -10,61 +10,13 @@ import MSI_Gamer from "/Items_Images/MSI_Gamer.png";
 import Xiaomi_Air from "/Items_Images/Xiaomi_Air.png";
 import Purchase from "/Items_Images/WhatsApp.png";
 import ASUS_Gaming from "/Items_Images/ASUS_Gaming.png";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export function ComputerStore() {
 
     const navigate = useNavigate()
-
-    useEffect(() => {
-      const checkCookie = async () => {
-        try {
-          const IsAuthenticated = await fetch("https://back-store-mkge.onrender.com/auth/welcome", {
-            method: "GET",
-            credentials: "include"
-          })
-
-          if(IsAuthenticated.status === 401){
-            await refreshAccessToken()
-            return checkCookie()
-          }
-
-          const getAnswer = await IsAuthenticated.json()
-          
-          if(IsAuthenticated.ok){
-            console.log("Nice")
-            console.log(getAnswer)
-          }
-        } catch (error) {
-          console.log(error)
-        }
-      }
-
-      const refreshAccessToken = async () => {
-        try {
-            const response = await fetch('https://back-store-mkge.onrender.com/auth/refreshtoken', {
-                method: 'POST',
-                credentials: 'include'
-            });
-            const getAnswer = response.json()
-            console.log(getAnswer)
-
-            if(response.status === 403){
-              navigate("/")
-            }
-    
-          
-        } catch (error) {
-            console.error('Error refreshing access token:', error);
-        }
-    };
-
-    checkCookie()
-
-  }, [navigate])
-
 
     const Logged_Out = () => {
         toast.warn("You have just logged out !", {
