@@ -18,9 +18,6 @@ export function ComputerStore() {
 
     const navigate = useNavigate()
 
-    const maxRetries = 3;  // Set a maximum number of retries to avoid infinite loops
-    let retryCount = 0;
-
     useEffect(() => {
       const checkCookie = async () => {
         try {
@@ -29,7 +26,7 @@ export function ComputerStore() {
             credentials: "include"
           })
 
-          if(IsAuthenticated.status === 401 && retryCount < maxRetries){
+          if(IsAuthenticated.status === 401){
             await refreshAccessToken()
             return checkCookie()
           }
@@ -65,7 +62,7 @@ export function ComputerStore() {
     };
 
     checkCookie()
-    }, [navigate, retryCount])
+    }, [navigate])
 
     const Logged_Out = () => {
         toast.warn("You have just logged out !", {
