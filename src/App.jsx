@@ -5,14 +5,13 @@ import {ErrorPage} from "./Errors/ErrorPage"
 import { SignIn } from "./Components/SignIn"
 import { SignUp } from "./Components/SignUp"
 import { ComputerStore } from "./Components/ComputerStore";
-import { useNavigate } from "react-router-dom";
 import './index.css'
 import { ToastContainer, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Privacy } from "./Components/Privacy";
 
 function App() {
-  const navigate = useNavigate()
+  
   const router = createBrowserRouter([
     {
       path: "/",
