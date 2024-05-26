@@ -62,7 +62,7 @@ export function ComputerStore() {
     };
 
     checkCookie()
-    }, [navigate])
+    })
 
     const Logged_Out = () => {
         toast.warn("You have just logged out !", {
