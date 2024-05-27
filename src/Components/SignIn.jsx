@@ -38,7 +38,7 @@ export function SignIn() {
       const Signing_In = async () => {
         
         try {
-          const Check_Data = await fetch(`https://back-store-mkge.onrender.com/auth/login`, {
+          const Check_Data = await fetch(`https://back-store-luhs.onrender.com/auth/login`, {
             method: "POST",
             credentials: "include",
             headers: {
@@ -81,7 +81,7 @@ export function SignIn() {
     
     const handleGoogleLogin = async () => {
       try {
-        const response = await fetch('https://back-store-mkge.onrender.com/auth/google', {
+        const response = await fetch('https://back-store-luhs.onrender.com/auth/google', {
           method: "GET",
           credentials: "include"
         });

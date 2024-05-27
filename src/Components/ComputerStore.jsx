@@ -30,7 +30,7 @@ export function ComputerStore() {
         Logged_Out()
         const loggingOut = async () => {
         try {
-          const logNow = await fetch("https://back-store-mkge.onrender.com/auth/logout", {
+          const logNow = await fetch("https://back-store-luhs.onrender.com/auth/logout", {
             method: "POST",
             credentials: "include"
           })
