@@ -40,6 +40,7 @@ export function SignIn() {
         try {
           const Check_Data = await fetch(`https://back-store-mkge.onrender.com/auth/login`, {
             method: "POST",
+            credentials: "include",
             headers: {
               "Content-Type": "application/json",
             },
@@ -80,7 +81,10 @@ export function SignIn() {
     
     const handleGoogleLogin = async () => {
       try {
-        const response = await fetch('https://back-store-mkge.onrender.com/auth/google');
+        const response = await fetch('https://back-store-mkge.onrender.com/auth/google', {
+          method: "GET",
+          credentials: "include"
+        });
         const { url } = await response.json();
         window.location.href = url;
       } catch (error) {
